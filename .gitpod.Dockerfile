@@ -1,11 +1,3 @@
-FROM gitpod/workspace-full
+FROM gitpod/workspace-full:2022-05-08-14-31-53
 
-USER gitpod
-
-RUN sudo touch /var/log/xdebug.log \
-    && sudo chmod 666 /var/log/xdebug.log
-
-RUN sudo apt-get update -q \
-    && sudo apt-get install -y php-dev
-
-RUN sudo apt update && apt-get install -y php8.1-xdebug
+RUN sudo install-packages php-xdebug
